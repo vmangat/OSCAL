@@ -264,14 +264,14 @@
                         <group-as name="alters" in-json="ARRAY"/>
                   </assembly>
             </model>
-            <constraint>
+            <!-- <constraint>
                   <is-unique id="unique-profile-modify-set-parameter" target="set-parameter">
                         <key-field target="@param-id"/>
                         <remarks>
                               <p>Since multiple <code>set-parameter</code> entries can be provided, each parameter must be set only once.</p>
                         </remarks>
                   </is-unique>
-            </constraint>
+            </constraint> -->
             
       </define-assembly>
       <define-assembly name="insert-controls">
