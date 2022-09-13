@@ -32,7 +32,7 @@ jobs:
     outputs:
       skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - id: ci-skip-step
@@ -44,14 +44,14 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       # use this for main repo master builds
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         if: ${{ github.repository == env.HOME_REPO && github.ref == format('refs/heads/{0}',env.HOME_BRANCH) }}
         with:
           path: ${{ env.OSCAL_HOME }}
           submodules: recursive
           token: ${{ secrets.COMMIT_TOKEN }}
       # use this for pull request builds where checkout uses the builtin token
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         if: ${{ github.repository != env.HOME_REPO || github.ref != format('refs/heads/{0}',env.HOME_BRANCH) }}
         with:
           path: ${{ env.OSCAL_HOME }}
