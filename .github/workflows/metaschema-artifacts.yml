@@ -100,7 +100,7 @@ jobs:
       - name: Generate Schemas
         run: |
           bash "${OSCAL_CICD_PATH}/generate-schema.sh" -w "${OSCAL_WORKING_PATH}"
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: schemas
           path: |
@@ -111,7 +111,7 @@ jobs:
       - name: Generate Content Converters
         run: |
           bash "${OSCAL_CICD_PATH}/generate-content-converters.sh" -w "${OSCAL_WORKING_PATH}"
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: content-converters
           path: |
