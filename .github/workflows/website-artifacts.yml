@@ -50,7 +50,7 @@ jobs:
     steps:
       # use this for main repo builds on branches
       - name: Checkout working branch or Tag
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
         if: ${{ github.repository == env.HOME_REPO && github.event_name == 'push' }}
         with:
           path: ${{ env.OSCAL_HOME }}
@@ -64,7 +64,7 @@ jobs:
         working-directory: ${{ env.OSCAL_HOME }}
       # use this for pull request builds where checkout uses the builtin token
       - name: Checkout PR
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
         if: ${{ github.repository != env.HOME_REPO || github.event_name != 'push' }}
         with:
           path: ${{ env.OSCAL_HOME }}
